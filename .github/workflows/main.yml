@@ -42,5 +42,5 @@ jobs:
       - uses: pulumi/actions@v4
         with:
           command: up
-          stack-name: aws-static-website/dev
+          stack-name: arun-test/aws-static-website/dev
 
