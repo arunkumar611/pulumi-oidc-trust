@@ -1,0 +1,5 @@
+config:
+  aws:region: us-west-2
+  oidc-trust-static-website:errorDocument: error.html
+  oidc-trust-static-website:indexDocument: index.html
+  oidc-trust-static-website:path: ./www
