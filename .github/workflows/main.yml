@@ -42,5 +42,5 @@ jobs:
       - uses: pulumi/actions@v4
         with:
           command: up
-          stack-name: testagents/gh
+          stack-name: oidc-trust-static-website/dev
 
