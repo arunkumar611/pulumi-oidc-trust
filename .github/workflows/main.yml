@@ -47,6 +47,4 @@ jobs:
       - name: List all Pulumi ESC Environments
         run: pulumi env ls -o arun-test
 
-      - name: List AWS S3 Buckets using short-term credentials from ESC
-        run: pulumi env run AwsOIDC aws s3 ls
 
