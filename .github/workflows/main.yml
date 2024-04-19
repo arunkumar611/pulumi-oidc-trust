@@ -30,10 +30,10 @@ jobs:
         run: |
           PULUMI_ACCESS_TOKEN=$(curl -X POST  \
             -H 'Content-Type: application/x-www-form-urlencoded' \
-            -d 'audience=urn:pulumi:org:ORG_NAME' \
+            -d 'audience=urn:pulumi:org:arun-test' \
             -d 'grant_type=urn:ietf:params:oauth:grant-type:token-exchange' \
             -d 'subject_token_type=urn:ietf:params:oauth:token-type:id_token' \
-            -d 'requested_token_type=urn:pulumi:token-type:access_token:organization' \
+            -d 'requested_token_type=urn:pulumi:token-type:access_token:personal' \
             -d 'subject_token=${{ env.OIDC_GH_TOKEN }}' \
             https://api.pulumi.com/api/oauth/token | jq -r '.access_token')
           echo "::add-mask::$PULUMI_ACCESS_TOKEN" 
