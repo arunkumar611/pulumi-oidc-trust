@@ -38,3 +38,8 @@ jobs:
             https://api.pulumi.com/api/oauth/token | jq -r '.access_token')
           echo "::add-mask::$PULUMI_ACCESS_TOKEN" 
           echo "PULUMI_ACCESS_TOKEN=$PULUMI_ACCESS_TOKEN" >> $GITHUB_ENV
+
+      - name: Print pulumi token (securely)
+        if: github.event.inputs.debug == 'true'
+        run: echo "PULUMI_ACCESS_TOKEN=${{ env.PULUMI_ACCESS_TOKEN }}"
+
