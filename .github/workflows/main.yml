@@ -39,8 +39,8 @@ jobs:
           echo "::add-mask::$PULUMI_ACCESS_TOKEN" 
           echo "PULUMI_ACCESS_TOKEN=$PULUMI_ACCESS_TOKEN" >> $GITHUB_ENV
 
-      - uses: pulumi/actions@v4
-        with:
-          command: up
-          stack-name: arun-test/aws-static-website/dev
+      - name: Run Pulumi Command
+        run: pulumi env ls -o arun-test
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ env.PULUMI_ACCESS_TOKEN }}
 
