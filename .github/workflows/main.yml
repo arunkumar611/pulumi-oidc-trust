@@ -44,8 +44,6 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ env.PULUMI_ACCESS_TOKEN }}
           
-      - uses: pulumi/actions@v4
-        with:
-          command: up
-          stack-name: oidc-trust-static-website/dev
+      - name: Run Pulumi Command
+        run: pulumi env ls -o arun-test
 
