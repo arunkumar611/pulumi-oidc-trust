@@ -39,8 +39,9 @@ jobs:
           echo "::add-mask::$PULUMI_ACCESS_TOKEN" 
           echo "PULUMI_ACCESS_TOKEN=$PULUMI_ACCESS_TOKEN" >> $GITHUB_ENV
 
+      - name: Login to Pulumi
+        run: pulumi login --cloud-url https://api.pulumi.com --token ${{ env.PULUMI_ACCESS_TOKEN }}
+
       - name: Run Pulumi Command
         run: pulumi env ls -o arun-test
-        env:
-          PULUMI_ACCESS_TOKEN: ${{ env.PULUMI_ACCESS_TOKEN }}
 
