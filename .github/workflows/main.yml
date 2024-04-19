@@ -46,3 +46,8 @@ jobs:
       - name: Print pulumi token (securely)
         run: echo "PULUMI_ACCESS_TOKEN=${{ env.PULUMI_ACCESS_TOKEN }}"
 
+      - uses: pulumi/actions@v4
+        with:
+          command: up
+          stack-name: aws-static-website/dev
+
